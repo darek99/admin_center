@@ -32,10 +32,11 @@
             this.shadowsButton = new System.Windows.Forms.Button();
             this.cleanButton = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.taskschedButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.aboutLink = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,7 +59,7 @@
             this.shadowsButton.Name = "shadowsButton";
             this.shadowsButton.Size = new System.Drawing.Size(75, 23);
             this.shadowsButton.TabIndex = 1;
-            this.shadowsButton.Text = "Shadows";
+            this.shadowsButton.Text = "&Shadows";
             this.shadowsButton.UseVisualStyleBackColor = true;
             this.shadowsButton.Click += new System.EventHandler(this.ShadowsButton_Click);
             // 
@@ -68,7 +69,7 @@
             this.cleanButton.Name = "cleanButton";
             this.cleanButton.Size = new System.Drawing.Size(75, 23);
             this.cleanButton.TabIndex = 0;
-            this.cleanButton.Text = "Cleanmgr";
+            this.cleanButton.Text = "&Cleanmgr";
             this.cleanButton.UseVisualStyleBackColor = true;
             this.cleanButton.Click += new System.EventHandler(this.CleanButton_Click);
             // 
@@ -81,6 +82,11 @@
             this.statusStrip.Size = new System.Drawing.Size(442, 22);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // groupBox2
             // 
@@ -99,7 +105,7 @@
             this.taskschedButton.Name = "taskschedButton";
             this.taskschedButton.Size = new System.Drawing.Size(75, 23);
             this.taskschedButton.TabIndex = 1;
-            this.taskschedButton.Text = "Taskschd";
+            this.taskschedButton.Text = "&Taskschd";
             this.taskschedButton.UseVisualStyleBackColor = true;
             this.taskschedButton.Click += new System.EventHandler(this.TaskschedButton_Click);
             // 
@@ -109,20 +115,27 @@
             this.eventButton.Name = "eventButton";
             this.eventButton.Size = new System.Drawing.Size(75, 23);
             this.eventButton.TabIndex = 0;
-            this.eventButton.Text = "Eventvwr";
+            this.eventButton.Text = "&Eventvwr";
             this.eventButton.UseVisualStyleBackColor = true;
             this.eventButton.Click += new System.EventHandler(this.EventButton_Click);
             // 
-            // statusLabel
+            // aboutLink
             // 
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(0, 17);
+            this.aboutLink.AutoSize = true;
+            this.aboutLink.Location = new System.Drawing.Point(374, 168);
+            this.aboutLink.Name = "aboutLink";
+            this.aboutLink.Size = new System.Drawing.Size(56, 13);
+            this.aboutLink.TabIndex = 2;
+            this.aboutLink.TabStop = true;
+            this.aboutLink.Text = "Informacja";
+            this.aboutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutLink_LinkClicked);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 215);
+            this.Controls.Add(this.aboutLink);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.groupBox1);
@@ -150,6 +163,7 @@
         private System.Windows.Forms.Button taskschedButton;
         private System.Windows.Forms.Button eventButton;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private System.Windows.Forms.LinkLabel aboutLink;
     }
 }
 

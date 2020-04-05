@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace admin_center
@@ -38,6 +32,15 @@ namespace admin_center
         private void TaskschedButton_Click(object sender, EventArgs e)
         {
             AdminCenter.RunCommand(AdminCenter.TASKSCHD);
+        }
+
+        private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string str_message = string.Format("Copyright © {0}\nWersja {1}", 
+                Application.CompanyName,
+                Application.ProductVersion);
+            MessageBox.Show(str_message, Application.ProductName, MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 }
