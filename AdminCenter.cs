@@ -11,6 +11,10 @@ namespace admin_center
         public const string CLEANMGR = "CLEANMGR.exe";
         public const string EVENTVWR = "EVENTVWR.MSC";
         public const string TASKSCHD = "TASKSCHD.MSC";
+        public const string MSCONFIG = "MSCONFIG.EXE";
+        public const string WBADMIN = "WBADMIN.MSC";
+        public const string APPWIZ = "APPWIZ.CPL";
+
 
         public AdminCenter()
         {
@@ -24,7 +28,7 @@ namespace admin_center
             }
             catch (Exception e) { MessageBox.Show(e.Message); }
         }
-  
+
         public static void CleanShadows()
         {
             string commmand_str = " /c vssadmin delete shadows /all /quiet & pause";
@@ -32,7 +36,7 @@ namespace admin_center
             {
                 Process.Start("cmd.exe", commmand_str);
             }
-            catch(Exception e) { MessageBox.Show(e.Message); }
+            catch (Exception e) { MessageBox.Show(e.Message); }
         }
     }
 }

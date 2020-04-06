@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.msconfigButton = new System.Windows.Forms.Button();
+            this.appButton = new System.Windows.Forms.Button();
             this.shadowsButton = new System.Windows.Forms.Button();
             this.cleanButton = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.wbadButton = new System.Windows.Forms.Button();
             this.taskschedButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
             this.aboutLink = new System.Windows.Forms.LinkLabel();
+            this.endButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -44,14 +48,36 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.msconfigButton);
+            this.groupBox1.Controls.Add(this.appButton);
             this.groupBox1.Controls.Add(this.shadowsButton);
             this.groupBox1.Controls.Add(this.cleanButton);
             this.groupBox1.Location = new System.Drawing.Point(230, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(200, 88);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Oczyszczanie";
+            // 
+            // msconfigButton
+            // 
+            this.msconfigButton.Location = new System.Drawing.Point(102, 52);
+            this.msconfigButton.Name = "msconfigButton";
+            this.msconfigButton.Size = new System.Drawing.Size(75, 23);
+            this.msconfigButton.TabIndex = 3;
+            this.msconfigButton.Text = "Msconfig";
+            this.msconfigButton.UseVisualStyleBackColor = true;
+            this.msconfigButton.Click += new System.EventHandler(this.MsconfigButton_Click);
+            // 
+            // appButton
+            // 
+            this.appButton.Location = new System.Drawing.Point(21, 52);
+            this.appButton.Name = "appButton";
+            this.appButton.Size = new System.Drawing.Size(75, 23);
+            this.appButton.TabIndex = 2;
+            this.appButton.Text = "Apps";
+            this.appButton.UseVisualStyleBackColor = true;
+            this.appButton.Click += new System.EventHandler(this.AppButton_Click);
             // 
             // shadowsButton
             // 
@@ -77,11 +103,10 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 193);
+            this.statusStrip.Location = new System.Drawing.Point(0, 163);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(442, 22);
             this.statusStrip.TabIndex = 1;
-            this.statusStrip.Text = "statusStrip1";
             // 
             // statusLabel
             // 
@@ -90,14 +115,25 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.wbadButton);
             this.groupBox2.Controls.Add(this.taskschedButton);
             this.groupBox2.Controls.Add(this.eventButton);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.Size = new System.Drawing.Size(200, 88);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacje";
+            // 
+            // wbadButton
+            // 
+            this.wbadButton.Location = new System.Drawing.Point(102, 52);
+            this.wbadButton.Name = "wbadButton";
+            this.wbadButton.Size = new System.Drawing.Size(75, 23);
+            this.wbadButton.TabIndex = 2;
+            this.wbadButton.Text = "WbAdmin";
+            this.wbadButton.UseVisualStyleBackColor = true;
+            this.wbadButton.Click += new System.EventHandler(this.WbadButton_Click);
             // 
             // taskschedButton
             // 
@@ -122,7 +158,7 @@
             // aboutLink
             // 
             this.aboutLink.AutoSize = true;
-            this.aboutLink.Location = new System.Drawing.Point(374, 168);
+            this.aboutLink.Location = new System.Drawing.Point(341, 122);
             this.aboutLink.Name = "aboutLink";
             this.aboutLink.Size = new System.Drawing.Size(56, 13);
             this.aboutLink.TabIndex = 2;
@@ -130,11 +166,22 @@
             this.aboutLink.Text = "Informacja";
             this.aboutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutLink_LinkClicked);
             // 
+            // endButton
+            // 
+            this.endButton.Location = new System.Drawing.Point(251, 117);
+            this.endButton.Name = "endButton";
+            this.endButton.Size = new System.Drawing.Size(75, 23);
+            this.endButton.TabIndex = 3;
+            this.endButton.Text = "Koniec";
+            this.endButton.UseVisualStyleBackColor = true;
+            this.endButton.Click += new System.EventHandler(this.EndButton_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 215);
+            this.ClientSize = new System.Drawing.Size(442, 185);
+            this.Controls.Add(this.endButton);
             this.Controls.Add(this.aboutLink);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip);
@@ -164,6 +211,10 @@
         private System.Windows.Forms.Button eventButton;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
         private System.Windows.Forms.LinkLabel aboutLink;
+        private System.Windows.Forms.Button appButton;
+        private System.Windows.Forms.Button msconfigButton;
+        private System.Windows.Forms.Button endButton;
+        private System.Windows.Forms.Button wbadButton;
     }
 }
 

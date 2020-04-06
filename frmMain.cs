@@ -36,11 +36,31 @@ namespace admin_center
 
         private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string str_message = string.Format("Copyright © {0}\nWersja {1}", 
+            string str_message = string.Format("Copyright © {0}\nWersja {1}",
                 Application.CompanyName,
                 Application.ProductVersion);
             MessageBox.Show(str_message, Application.ProductName, MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+        }
+
+        private void AppButton_Click(object sender, EventArgs e)
+        {
+            AdminCenter.RunCommand(AdminCenter.APPWIZ);
+        }
+
+        private void MsconfigButton_Click(object sender, EventArgs e)
+        {
+            AdminCenter.RunCommand(AdminCenter.MSCONFIG);
+        }
+
+        private void EndButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void WbadButton_Click(object sender, EventArgs e)
+        {
+            AdminCenter.RunCommand(AdminCenter.WBADMIN);
         }
     }
 }
