@@ -24,9 +24,9 @@ namespace admin_center
         {
             try
             {
-                System.Diagnostics.Process.Start(command);
+                _ = Process.Start(command);
             }
-            catch (Exception e) { MessageBox.Show(e.Message); }
+            catch (Exception e) { _ = MessageBox.Show(e.Message); }
         }
 
         public static void CleanShadows()

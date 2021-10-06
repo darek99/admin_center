@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Security.Principal;
 using System.Windows.Forms;
+
 
 namespace admin_center
 
@@ -9,9 +11,16 @@ namespace admin_center
         public frmMain()
         {
             InitializeComponent();
+            
+            // check if administrator
+            bool IsAdministrator = new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+            if (IsAdministrator) Text = "Administrator: " + ProductName.ToString();
 
             OperatingSystem os = Environment.OSVersion;
-            statusLabel.Text = os.VersionString;
+            //statusLabel.Text = os.VersionString;
+            statusLabel.Text = string.Format("© {0}  ver. {1}",
+                Application.CompanyName,
+                Application.ProductVersion);
         }
 
         private void CleanButton_Click(object sender, EventArgs e)
