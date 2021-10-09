@@ -14,13 +14,14 @@ namespace admin_center
             
             // check if administrator
             bool IsAdministrator = new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
-            if (IsAdministrator) Text = "Administrator: " + ProductName.ToString();
+            if (IsAdministrator) label1.Text = "Administrator";
+            else label1.Text = WindowsIdentity.GetCurrent().User.Value;
 
-            OperatingSystem os = Environment.OSVersion;
+            //OperatingSystem os = Environment.OSVersion;
             //statusLabel.Text = os.VersionString;
-            statusLabel.Text = string.Format("© {0}  ver. {1}",
-                Application.CompanyName,
-                Application.ProductVersion);
+            //statusLabel.Text = string.Format("© {0}  ver. {1}",
+            label2.Text = "@ " + Application.CompanyName;
+            label3.Text = "ver. " + Application.ProductVersion;
         }
 
         private void CleanButton_Click(object sender, EventArgs e)
