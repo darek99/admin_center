@@ -72,5 +72,10 @@ namespace admin_center
         {
             AdminCenter.RunCommand(AdminCenter.WBADMIN);
         }
+
+        private void cmdButton_Click(object sender, EventArgs e)
+        {
+            AdminCenter.RunCommand("cmd.exe");
+        }
     }
 }

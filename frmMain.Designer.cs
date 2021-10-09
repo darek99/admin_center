@@ -49,9 +49,14 @@
             this.label1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cmdButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -83,7 +88,7 @@
             this.appButton.Name = "appButton";
             this.appButton.Size = new System.Drawing.Size(75, 23);
             this.appButton.TabIndex = 2;
-            this.appButton.Text = "Apps";
+            this.appButton.Text = "Programs";
             this.appButton.UseVisualStyleBackColor = true;
             this.appButton.Click += new System.EventHandler(this.AppButton_Click);
             // 
@@ -109,12 +114,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.cmdButton);
             this.groupBox2.Controls.Add(this.wbadButton);
             this.groupBox2.Controls.Add(this.taskschedButton);
             this.groupBox2.Controls.Add(this.eventButton);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 88);
+            this.groupBox2.Size = new System.Drawing.Size(200, 146);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacje";
@@ -152,7 +160,7 @@
             // aboutLink
             // 
             this.aboutLink.AutoSize = true;
-            this.aboutLink.Location = new System.Drawing.Point(341, 122);
+            this.aboutLink.Location = new System.Drawing.Point(121, 16);
             this.aboutLink.Name = "aboutLink";
             this.aboutLink.Size = new System.Drawing.Size(56, 13);
             this.aboutLink.TabIndex = 2;
@@ -162,7 +170,7 @@
             // 
             // endButton
             // 
-            this.endButton.Location = new System.Drawing.Point(251, 117);
+            this.endButton.Location = new System.Drawing.Point(21, 14);
             this.endButton.Name = "endButton";
             this.endButton.Size = new System.Drawing.Size(75, 23);
             this.endButton.TabIndex = 3;
@@ -246,16 +254,53 @@
             this.label3.Spring = true;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // cmdButton
+            // 
+            this.cmdButton.Location = new System.Drawing.Point(21, 52);
+            this.cmdButton.Name = "cmdButton";
+            this.cmdButton.Size = new System.Drawing.Size(75, 23);
+            this.cmdButton.TabIndex = 3;
+            this.cmdButton.Text = "Cmd";
+            this.cmdButton.UseVisualStyleBackColor = true;
+            this.cmdButton.Click += new System.EventHandler(this.cmdButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(21, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(103, 82);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.endButton);
+            this.groupBox3.Controls.Add(this.aboutLink);
+            this.groupBox3.Location = new System.Drawing.Point(230, 107);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 51);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 185);
             this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.endButton);
-            this.Controls.Add(this.aboutLink);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -266,6 +311,8 @@
             this.groupBox2.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +340,10 @@
         private System.Windows.Forms.ToolStripStatusLabel label1;
         private System.Windows.Forms.ToolStripStatusLabel label2;
         private System.Windows.Forms.ToolStripStatusLabel label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cmdButton;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 
