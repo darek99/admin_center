@@ -114,11 +114,6 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-<<<<<<< HEAD
     <PostBuildEvent>copy $(TargetPath) C:\Users\darek\Desktop\vertimo_dev /y</PostBuildEvent>
-=======
-    <PostBuildEvent>
-</PostBuildEvent>
->>>>>>> 28dcb81f1769bcdfc46fe1449fe09ba0422202b8
   </PropertyGroup>
 </Project>
