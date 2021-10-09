@@ -1,4 +1,6 @@
 obj/
 bin/
-.suo
-.vs/admin_center/v16/.suo
+
+.vs/
+
+
