@@ -35,6 +35,9 @@
             this.shadowsButton = new System.Windows.Forms.Button();
             this.cleanButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.diskmgmtButton = new System.Windows.Forms.Button();
+            this.compmgmtButton = new System.Windows.Forms.Button();
+            this.cmdButton = new System.Windows.Forms.Button();
             this.wbadButton = new System.Windows.Forms.Button();
             this.taskschedButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
@@ -49,10 +52,9 @@
             this.label1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cmdButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.msinfoButton = new System.Windows.Forms.Button();
+            this.fwButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -114,8 +116,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.fwButton);
+            this.groupBox2.Controls.Add(this.msinfoButton);
+            this.groupBox2.Controls.Add(this.diskmgmtButton);
+            this.groupBox2.Controls.Add(this.compmgmtButton);
             this.groupBox2.Controls.Add(this.cmdButton);
             this.groupBox2.Controls.Add(this.wbadButton);
             this.groupBox2.Controls.Add(this.taskschedButton);
@@ -126,6 +130,36 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacje";
+            // 
+            // diskmgmtButton
+            // 
+            this.diskmgmtButton.Location = new System.Drawing.Point(103, 82);
+            this.diskmgmtButton.Name = "diskmgmtButton";
+            this.diskmgmtButton.Size = new System.Drawing.Size(75, 23);
+            this.diskmgmtButton.TabIndex = 5;
+            this.diskmgmtButton.Text = "Diskmgmt";
+            this.diskmgmtButton.UseVisualStyleBackColor = true;
+            this.diskmgmtButton.Click += new System.EventHandler(this.diskmgmt_Click);
+            // 
+            // compmgmtButton
+            // 
+            this.compmgmtButton.Location = new System.Drawing.Point(21, 82);
+            this.compmgmtButton.Name = "compmgmtButton";
+            this.compmgmtButton.Size = new System.Drawing.Size(75, 23);
+            this.compmgmtButton.TabIndex = 4;
+            this.compmgmtButton.Text = "Compmgmt";
+            this.compmgmtButton.UseVisualStyleBackColor = true;
+            this.compmgmtButton.Click += new System.EventHandler(this.compmgmt_Click);
+            // 
+            // cmdButton
+            // 
+            this.cmdButton.Location = new System.Drawing.Point(21, 52);
+            this.cmdButton.Name = "cmdButton";
+            this.cmdButton.Size = new System.Drawing.Size(75, 23);
+            this.cmdButton.TabIndex = 3;
+            this.cmdButton.Text = "Command";
+            this.cmdButton.UseVisualStyleBackColor = true;
+            this.cmdButton.Click += new System.EventHandler(this.cmdButton_Click);
             // 
             // wbadButton
             // 
@@ -254,34 +288,6 @@
             this.label3.Spring = true;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cmdButton
-            // 
-            this.cmdButton.Location = new System.Drawing.Point(21, 52);
-            this.cmdButton.Name = "cmdButton";
-            this.cmdButton.Size = new System.Drawing.Size(75, 23);
-            this.cmdButton.TabIndex = 3;
-            this.cmdButton.Text = "Cmd";
-            this.cmdButton.UseVisualStyleBackColor = true;
-            this.cmdButton.Click += new System.EventHandler(this.cmdButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(21, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(103, 82);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.endButton);
@@ -291,6 +297,26 @@
             this.groupBox3.Size = new System.Drawing.Size(200, 51);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
+            // 
+            // msinfoButton
+            // 
+            this.msinfoButton.Location = new System.Drawing.Point(21, 111);
+            this.msinfoButton.Name = "msinfoButton";
+            this.msinfoButton.Size = new System.Drawing.Size(75, 23);
+            this.msinfoButton.TabIndex = 6;
+            this.msinfoButton.Text = "Msinfo";
+            this.msinfoButton.UseVisualStyleBackColor = true;
+            this.msinfoButton.Click += new System.EventHandler(this.msinfo_Click);
+            // 
+            // fwButton
+            // 
+            this.fwButton.Location = new System.Drawing.Point(103, 111);
+            this.fwButton.Name = "fwButton";
+            this.fwButton.Size = new System.Drawing.Size(75, 23);
+            this.fwButton.TabIndex = 7;
+            this.fwButton.Text = "Firewall";
+            this.fwButton.UseVisualStyleBackColor = true;
+            this.fwButton.Click += new System.EventHandler(this.firewall_Click);
             // 
             // frmMain
             // 
@@ -340,10 +366,12 @@
         private System.Windows.Forms.ToolStripStatusLabel label1;
         private System.Windows.Forms.ToolStripStatusLabel label2;
         private System.Windows.Forms.ToolStripStatusLabel label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button diskmgmtButton;
+        private System.Windows.Forms.Button compmgmtButton;
         private System.Windows.Forms.Button cmdButton;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button fwButton;
+        private System.Windows.Forms.Button msinfoButton;
     }
 }
 

@@ -77,5 +77,25 @@ namespace admin_center
         {
             AdminCenter.RunCommand("cmd.exe");
         }
+
+        private void compmgmt_Click(object sender, EventArgs e)
+        {
+            AdminCenter.RunCommand("compmgmt.msc");
+        }
+
+        private void diskmgmt_Click(object sender, EventArgs e)
+        {
+            AdminCenter.RunCommand("diskmgmt.msc");
+        }
+
+        private void msinfo_Click(object sender, EventArgs e)
+        {
+            AdminCenter.RunCommand("msinfo32.exe");
+        }
+
+        private void firewall_Click(object sender, EventArgs e)
+        {
+            AdminCenter.RunCommand("firewall.cpl");
+        }
     }
 }
