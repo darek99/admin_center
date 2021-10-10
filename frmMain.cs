@@ -11,7 +11,7 @@ namespace admin_center
         public frmMain()
         {
             InitializeComponent();
-            
+
             // check if administrator
             bool IsAdministrator = new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
             if (IsAdministrator) label1.Text = "Administrator";
