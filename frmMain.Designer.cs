@@ -55,6 +55,7 @@
             this.label2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.linkUpdate = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -224,7 +225,7 @@
             // 
             // endButton
             // 
-            this.endButton.Location = new System.Drawing.Point(21, 14);
+            this.endButton.Location = new System.Drawing.Point(21, 16);
             this.endButton.Name = "endButton";
             this.endButton.Size = new System.Drawing.Size(75, 23);
             this.endButton.TabIndex = 3;
@@ -294,7 +295,7 @@
             this.label2.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.label2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 19);
+            this.label2.Size = new System.Drawing.Size(163, 19);
             this.label2.Spring = true;
             // 
             // label3
@@ -302,12 +303,13 @@
             this.label3.AutoSize = false;
             this.label3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 19);
+            this.label3.Size = new System.Drawing.Size(163, 19);
             this.label3.Spring = true;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.linkUpdate);
             this.groupBox3.Controls.Add(this.endButton);
             this.groupBox3.Controls.Add(this.aboutLink);
             this.groupBox3.Location = new System.Drawing.Point(230, 107);
@@ -315,6 +317,17 @@
             this.groupBox3.Size = new System.Drawing.Size(200, 51);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
+            // 
+            // linkUpdate
+            // 
+            this.linkUpdate.AutoSize = true;
+            this.linkUpdate.Location = new System.Drawing.Point(121, 29);
+            this.linkUpdate.Name = "linkUpdate";
+            this.linkUpdate.Size = new System.Drawing.Size(42, 13);
+            this.linkUpdate.TabIndex = 4;
+            this.linkUpdate.TabStop = true;
+            this.linkUpdate.Text = "Update";
+            this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLink_Clicked);
             // 
             // frmMain
             // 
@@ -370,6 +383,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button fwButton;
         private System.Windows.Forms.Button msinfoButton;
+        private System.Windows.Forms.LinkLabel linkUpdate;
     }
 }
 

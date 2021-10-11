@@ -14,8 +14,8 @@ namespace admin_center
         public const string MSCONFIG = "MSCONFIG.EXE";
         public const string WBADMIN = "WBADMIN.MSC";
         public const string APPWIZ = "APPWIZ.CPL";
-
-
+        public const string UPDATE = "https://drive.google.com/drive/folders/1-RFHxjVz8aULLFbp4CYP1VcgUGM6Pc0p?usp=sharing";
+        public const string UPDATE2 = "https://app.box.com/s/oxfhptwr9lqx6nop5y1e852etkr1z3pg";
         public AdminCenter()
         {
         }
@@ -24,7 +24,7 @@ namespace admin_center
         {
             try
             {
-                _ = Process.Start(command);
+                Process.Start(command);
             }
             catch (Exception e) { _ = MessageBox.Show(e.Message); }
         }
