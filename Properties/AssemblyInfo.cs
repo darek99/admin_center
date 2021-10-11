@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("admin_center")]
 [assembly: AssemblyDescription("admin_center")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("VERTIMO Dariusz Gmyz")]
+[assembly: AssemblyCompany("Dariusz Gmyz")]
 [assembly: AssemblyProduct("admin_center")]
 [assembly: AssemblyCopyright("Copyright ©  2020 Dariusz Gmyz")]
 [assembly: AssemblyTrademark("")]
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 // Możesz określić wszystkie wartości lub użyć domyślnych numerów kompilacji i poprawki
 // przy użyciu symbolu „*”, tak jak pokazano poniżej:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.51.1011")]
-[assembly: AssemblyFileVersion("1.2.51.1011")]
+[assembly: AssemblyVersion("1.2.52.1011")]
+[assembly: AssemblyFileVersion("1.2.52.1011")]
 

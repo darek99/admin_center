@@ -51,9 +51,7 @@
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.label1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label_ver = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.linkUpdate = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
@@ -272,40 +270,21 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.label1,
-            this.label2,
-            this.label3});
+            this.label_ver});
             this.statusStrip.Location = new System.Drawing.Point(0, 161);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(442, 24);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
             // 
-            // label1
+            // label_ver
             // 
-            this.label1.AutoSize = false;
-            this.label1.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.label1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 19);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = false;
-            this.label2.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.label2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 19);
-            this.label2.Spring = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = false;
-            this.label3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 19);
-            this.label3.Spring = true;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_ver.AutoSize = false;
+            this.label_ver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.label_ver.Name = "label_ver";
+            this.label_ver.Size = new System.Drawing.Size(427, 19);
+            this.label_ver.Spring = true;
+            this.label_ver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox3
             // 
@@ -374,9 +353,7 @@
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel label1;
-        private System.Windows.Forms.ToolStripStatusLabel label2;
-        private System.Windows.Forms.ToolStripStatusLabel label3;
+        private System.Windows.Forms.ToolStripStatusLabel label_ver;
         private System.Windows.Forms.Button diskmgmtButton;
         private System.Windows.Forms.Button compmgmtButton;
         private System.Windows.Forms.Button cmdButton;
