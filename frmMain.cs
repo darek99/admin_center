@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Principal;
 using System.Windows.Forms;
+//using Sy
 
 
 namespace admin_center
@@ -49,6 +50,7 @@ namespace admin_center
             string str_message = string.Format("Copyright © {0}\nWersja {1}",
                 Application.CompanyName,
                 Application.ProductVersion);
+             
             MessageBox.Show(str_message, Application.ProductName, MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
@@ -96,6 +98,11 @@ namespace admin_center
         private void firewall_Click(object sender, EventArgs e)
         {
             AdminCenter.RunCommand("firewall.cpl");
+        }
+
+        private void UpdateLink_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AdminCenter.RunCommand(AdminCenter.UPDATE2);
         }
     }
 }
