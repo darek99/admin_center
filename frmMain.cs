@@ -103,6 +103,7 @@ namespace admin_center
         private void UpdateLink_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AdminCenter.RunCommand(AdminCenter.UPDATE2);
+            Application.Exit();
         }
     }
 }
