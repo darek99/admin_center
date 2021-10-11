@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 // Możesz określić wszystkie wartości lub użyć domyślnych numerów kompilacji i poprawki
 // przy użyciu symbolu „*”, tak jak pokazano poniżej:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.50.1011")]
-[assembly: AssemblyFileVersion("1.2.50.1011")]
+[assembly: AssemblyVersion("1.2.51.1011")]
+[assembly: AssemblyFileVersion("1.2.51.1011")]
 
