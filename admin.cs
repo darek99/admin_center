@@ -1,28 +1,33 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Windows.Forms;
 
 namespace admin_center
 {
-    public class AdminCenter : AdminCenterBase
+    public class Admin : Commands
     {
-        public static void CleanShadows()
+        public void CleanShadows()
         {
             string commmand_str = " /c vssadmin delete shadows /all /quiet & pause";
             try
             {
                 Process.Start("cmd.exe", commmand_str);
             }
-            catch (Exception e) { MessageBox.Show(e.Message); }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public static void RunCommand(string command)
+        public void Run(string command)
         {
             try
             {
                 Process.Start(command);
             }
-            catch (Exception e) { _ = MessageBox.Show(e.Message); }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

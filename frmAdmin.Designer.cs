@@ -1,6 +1,6 @@
 ﻿namespace admin_center
 {
-    partial class frmMain
+    partial class frmAdmin
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.msconfigButton = new System.Windows.Forms.Button();
             this.appButton = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             this.msconfigButton.TabIndex = 3;
             this.msconfigButton.Text = "Msconfig";
             this.msconfigButton.UseVisualStyleBackColor = true;
-            this.msconfigButton.Click += new System.EventHandler(this.MsconfigButton_Click);
+            this.msconfigButton.Click += new System.EventHandler(this.msconfigButton_Click);
             // 
             // appButton
             // 
@@ -91,7 +91,7 @@
             this.appButton.TabIndex = 2;
             this.appButton.Text = "Programs";
             this.appButton.UseVisualStyleBackColor = true;
-            this.appButton.Click += new System.EventHandler(this.AppButton_Click);
+            this.appButton.Click += new System.EventHandler(this.appButton_Click);
             // 
             // shadowsButton
             // 
@@ -101,7 +101,7 @@
             this.shadowsButton.TabIndex = 1;
             this.shadowsButton.Text = "&Shadows";
             this.shadowsButton.UseVisualStyleBackColor = true;
-            this.shadowsButton.Click += new System.EventHandler(this.ShadowsButton_Click);
+            this.shadowsButton.Click += new System.EventHandler(this.shadowsButton_Click);
             // 
             // cleanButton
             // 
@@ -111,7 +111,7 @@
             this.cleanButton.TabIndex = 0;
             this.cleanButton.Text = "&Cleanmgr";
             this.cleanButton.UseVisualStyleBackColor = true;
-            this.cleanButton.Click += new System.EventHandler(this.CleanButton_Click);
+            this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
             // 
             // groupBox2
             // 
@@ -188,7 +188,7 @@
             this.wbadButton.TabIndex = 2;
             this.wbadButton.Text = "WbAdmin";
             this.wbadButton.UseVisualStyleBackColor = true;
-            this.wbadButton.Click += new System.EventHandler(this.WbadButton_Click);
+            this.wbadButton.Click += new System.EventHandler(this.wbadButton_Click);
             // 
             // taskschedButton
             // 
@@ -198,7 +198,7 @@
             this.taskschedButton.TabIndex = 1;
             this.taskschedButton.Text = "&Taskschd";
             this.taskschedButton.UseVisualStyleBackColor = true;
-            this.taskschedButton.Click += new System.EventHandler(this.TaskschedButton_Click);
+            this.taskschedButton.Click += new System.EventHandler(this.taskschedButton_Click);
             // 
             // eventButton
             // 
@@ -208,7 +208,7 @@
             this.eventButton.TabIndex = 0;
             this.eventButton.Text = "&Eventvwr";
             this.eventButton.UseVisualStyleBackColor = true;
-            this.eventButton.Click += new System.EventHandler(this.EventButton_Click);
+            this.eventButton.Click += new System.EventHandler(this.eventButton_Click);
             // 
             // aboutLink
             // 
@@ -219,7 +219,7 @@
             this.aboutLink.TabIndex = 2;
             this.aboutLink.TabStop = true;
             this.aboutLink.Text = "Informacja";
-            this.aboutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutLink_LinkClicked);
+            this.aboutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.aboutLink_LinkClicked);
             // 
             // endButton
             // 
@@ -229,7 +229,7 @@
             this.endButton.TabIndex = 3;
             this.endButton.Text = "Koniec";
             this.endButton.UseVisualStyleBackColor = true;
-            this.endButton.Click += new System.EventHandler(this.EndButton_Click);
+            this.endButton.Click += new System.EventHandler(this.endButton_Click);
             // 
             // BottomToolStripPanel
             // 
@@ -280,9 +280,8 @@
             // label_ver
             // 
             this.label_ver.AutoSize = false;
-            this.label_ver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.label_ver.Name = "label_ver";
-            this.label_ver.Size = new System.Drawing.Size(427, 19);
+            this.label_ver.Size = new System.Drawing.Size(396, 19);
             this.label_ver.Spring = true;
             this.label_ver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -306,9 +305,9 @@
             this.linkUpdate.TabIndex = 4;
             this.linkUpdate.TabStop = true;
             this.linkUpdate.Text = "Update";
-            this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLink_Clicked);
+            this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.updateLink_Clicked);
             // 
-            // frmMain
+            // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -320,7 +319,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frmMain";
+            this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "admin_center";
             this.groupBox1.ResumeLayout(false);
