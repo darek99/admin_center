@@ -16,14 +16,11 @@ namespace admin_center
         {
             InitializeComponent();
 
-            // check if administrator then set caption of the form Administrator or UserName
             if (new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator))
-
                 Text = "Administrator: " + Application.ProductName;
             else
                 Text = WindowsIdentity.GetCurrent().User.Value + ": " + Application.ProductName;
 
-            // set current version on status bar
             label_ver.Text = "ver." + Application.ProductVersion;
         }
 

@@ -45,10 +45,6 @@
             this.eventButton = new System.Windows.Forms.Button();
             this.aboutLink = new System.Windows.Forms.LinkLabel();
             this.endButton = new System.Windows.Forms.Button();
-            this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.label_ver = new System.Windows.Forms.ToolStripStatusLabel();
@@ -75,6 +71,7 @@
             // 
             // msconfigButton
             // 
+            this.msconfigButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.msconfigButton.Location = new System.Drawing.Point(102, 52);
             this.msconfigButton.Name = "msconfigButton";
             this.msconfigButton.Size = new System.Drawing.Size(75, 23);
@@ -85,6 +82,7 @@
             // 
             // appButton
             // 
+            this.appButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.appButton.Location = new System.Drawing.Point(21, 52);
             this.appButton.Name = "appButton";
             this.appButton.Size = new System.Drawing.Size(75, 23);
@@ -95,6 +93,7 @@
             // 
             // shadowsButton
             // 
+            this.shadowsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.shadowsButton.Location = new System.Drawing.Point(102, 23);
             this.shadowsButton.Name = "shadowsButton";
             this.shadowsButton.Size = new System.Drawing.Size(75, 23);
@@ -105,10 +104,11 @@
             // 
             // cleanButton
             // 
+            this.cleanButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cleanButton.Location = new System.Drawing.Point(21, 23);
             this.cleanButton.Name = "cleanButton";
             this.cleanButton.Size = new System.Drawing.Size(75, 23);
-            this.cleanButton.TabIndex = 0;
+            this.cleanButton.TabIndex = 3;
             this.cleanButton.Text = "&Cleanmgr";
             this.cleanButton.UseVisualStyleBackColor = true;
             this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
@@ -132,6 +132,7 @@
             // 
             // fwButton
             // 
+            this.fwButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.fwButton.Location = new System.Drawing.Point(103, 111);
             this.fwButton.Name = "fwButton";
             this.fwButton.Size = new System.Drawing.Size(75, 23);
@@ -142,6 +143,7 @@
             // 
             // msinfoButton
             // 
+            this.msinfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.msinfoButton.Location = new System.Drawing.Point(21, 111);
             this.msinfoButton.Name = "msinfoButton";
             this.msinfoButton.Size = new System.Drawing.Size(75, 23);
@@ -152,6 +154,7 @@
             // 
             // diskmgmtButton
             // 
+            this.diskmgmtButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.diskmgmtButton.Location = new System.Drawing.Point(103, 82);
             this.diskmgmtButton.Name = "diskmgmtButton";
             this.diskmgmtButton.Size = new System.Drawing.Size(75, 23);
@@ -162,6 +165,7 @@
             // 
             // compmgmtButton
             // 
+            this.compmgmtButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.compmgmtButton.Location = new System.Drawing.Point(21, 82);
             this.compmgmtButton.Name = "compmgmtButton";
             this.compmgmtButton.Size = new System.Drawing.Size(75, 23);
@@ -172,6 +176,7 @@
             // 
             // cmdButton
             // 
+            this.cmdButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdButton.Location = new System.Drawing.Point(21, 52);
             this.cmdButton.Name = "cmdButton";
             this.cmdButton.Size = new System.Drawing.Size(75, 23);
@@ -182,6 +187,7 @@
             // 
             // wbadButton
             // 
+            this.wbadButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.wbadButton.Location = new System.Drawing.Point(102, 52);
             this.wbadButton.Name = "wbadButton";
             this.wbadButton.Size = new System.Drawing.Size(75, 23);
@@ -192,6 +198,7 @@
             // 
             // taskschedButton
             // 
+            this.taskschedButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.taskschedButton.Location = new System.Drawing.Point(102, 23);
             this.taskschedButton.Name = "taskschedButton";
             this.taskschedButton.Size = new System.Drawing.Size(75, 23);
@@ -202,6 +209,7 @@
             // 
             // eventButton
             // 
+            this.eventButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.eventButton.Location = new System.Drawing.Point(21, 24);
             this.eventButton.Name = "eventButton";
             this.eventButton.Size = new System.Drawing.Size(75, 23);
@@ -223,45 +231,14 @@
             // 
             // endButton
             // 
+            this.endButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.endButton.Location = new System.Drawing.Point(21, 16);
             this.endButton.Name = "endButton";
             this.endButton.Size = new System.Drawing.Size(75, 23);
-            this.endButton.TabIndex = 3;
+            this.endButton.TabIndex = 0;
             this.endButton.Text = "Koniec";
             this.endButton.UseVisualStyleBackColor = true;
             this.endButton.Click += new System.EventHandler(this.endButton_Click);
-            // 
-            // BottomToolStripPanel
-            // 
-            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
-            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // TopToolStripPanel
-            // 
-            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopToolStripPanel.Name = "TopToolStripPanel";
-            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // RightToolStripPanel
-            // 
-            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.RightToolStripPanel.Name = "RightToolStripPanel";
-            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // LeftToolStripPanel
-            // 
-            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
-            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
             // 
             // ContentPanel
             // 
@@ -273,6 +250,7 @@
             this.label_ver});
             this.statusStrip.Location = new System.Drawing.Point(0, 161);
             this.statusStrip.Name = "statusStrip";
+            this.statusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.statusStrip.Size = new System.Drawing.Size(442, 24);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
@@ -281,7 +259,7 @@
             // 
             this.label_ver.AutoSize = false;
             this.label_ver.Name = "label_ver";
-            this.label_ver.Size = new System.Drawing.Size(396, 19);
+            this.label_ver.Size = new System.Drawing.Size(427, 19);
             this.label_ver.Spring = true;
             this.label_ver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -346,10 +324,6 @@
         private System.Windows.Forms.Button msconfigButton;
         private System.Windows.Forms.Button endButton;
         private System.Windows.Forms.Button wbadButton;
-        private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel label_ver;
