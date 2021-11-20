@@ -3,15 +3,8 @@
   <Class Name="admin_center.Admin">
     <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAEAAAAAAACAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>admin.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="admin_center.frmAdmin">
-    <Position X="0.5" Y="0.5" Width="4.75" />
-    <TypeIdentifier>
-      <HashCode>RkQAgTAAACAgKVBAQ4GAIAACAIEIACAMACAAAAMGBAE=</HashCode>
-      <FileName>frmAdmin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="admin_center.Commands">
@@ -19,6 +12,13 @@
     <TypeIdentifier>
       <HashCode>AgEAAAAEAAAAAIAAAAAAAAAAAgAEAAAAAACAAAAEAAA=</HashCode>
       <FileName>Commands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="admin_center.FrmAdmin">
+    <Position X="0.5" Y="0.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>R0QAAGAIAHAiIBAAAAGAoAGCAIEIACAJAiAAAAJGBAE=</HashCode>
+      <FileName>frmAdmin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Tahoma" Size="8.25" />

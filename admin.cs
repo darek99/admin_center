@@ -5,27 +5,17 @@ namespace admin_center
 {
     public class Admin : Commands
     {
-        public Process ExecuteCmdCommand(string command)
-        {
-            try
-            {
-                return Process.Start("cmd.exe", command);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        public Action<Exception> ExceptionRaised;
 
-        public Process Runcommand(string command)
+        public void RunCommand(string command, bool cmd = false)
         {
             try
             {
-                return Process.Start(command);
+                _ = !cmd ? Process.Start(command) : Process.Start("cmd.exe", command);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                ExceptionRaised(e);
             }
         }
     }
