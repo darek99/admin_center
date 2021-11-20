@@ -1,6 +1,6 @@
 ﻿namespace admin_center
 {
-    partial class frmAdmin
+    partial class FrmAdmin
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdmin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.msconfigButton = new System.Windows.Forms.Button();
             this.appButton = new System.Windows.Forms.Button();
@@ -71,47 +71,43 @@
             // 
             // msconfigButton
             // 
-            this.msconfigButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.msconfigButton.Location = new System.Drawing.Point(102, 52);
             this.msconfigButton.Name = "msconfigButton";
             this.msconfigButton.Size = new System.Drawing.Size(75, 23);
             this.msconfigButton.TabIndex = 3;
             this.msconfigButton.Text = "Msconfig";
             this.msconfigButton.UseVisualStyleBackColor = true;
-            this.msconfigButton.Click += new System.EventHandler(this.msconfigButton_Click);
+            this.msconfigButton.Click += new System.EventHandler(this.MsconfigButton_Click);
             // 
             // appButton
             // 
-            this.appButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.appButton.Location = new System.Drawing.Point(21, 52);
             this.appButton.Name = "appButton";
             this.appButton.Size = new System.Drawing.Size(75, 23);
             this.appButton.TabIndex = 2;
             this.appButton.Text = "Programs";
             this.appButton.UseVisualStyleBackColor = true;
-            this.appButton.Click += new System.EventHandler(this.appButton_Click);
+            this.appButton.Click += new System.EventHandler(this.AppButton_Click);
             // 
             // shadowsButton
             // 
-            this.shadowsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.shadowsButton.Location = new System.Drawing.Point(102, 23);
             this.shadowsButton.Name = "shadowsButton";
             this.shadowsButton.Size = new System.Drawing.Size(75, 23);
             this.shadowsButton.TabIndex = 1;
             this.shadowsButton.Text = "&Shadows";
             this.shadowsButton.UseVisualStyleBackColor = true;
-            this.shadowsButton.Click += new System.EventHandler(this.shadowsButton_Click);
+            this.shadowsButton.Click += new System.EventHandler(this.ShadowsButton_Click);
             // 
             // cleanButton
             // 
-            this.cleanButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cleanButton.Location = new System.Drawing.Point(21, 23);
             this.cleanButton.Name = "cleanButton";
             this.cleanButton.Size = new System.Drawing.Size(75, 23);
             this.cleanButton.TabIndex = 3;
             this.cleanButton.Text = "&Cleanmgr";
             this.cleanButton.UseVisualStyleBackColor = true;
-            this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
+            this.cleanButton.Click += new System.EventHandler(this.CleanButton_Click);
             // 
             // groupBox2
             // 
@@ -132,91 +128,83 @@
             // 
             // fwButton
             // 
-            this.fwButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.fwButton.Location = new System.Drawing.Point(103, 111);
             this.fwButton.Name = "fwButton";
             this.fwButton.Size = new System.Drawing.Size(75, 23);
             this.fwButton.TabIndex = 7;
             this.fwButton.Text = "Firewall";
             this.fwButton.UseVisualStyleBackColor = true;
-            this.fwButton.Click += new System.EventHandler(this.firewall_Click);
+            this.fwButton.Click += new System.EventHandler(this.Firewall_Click);
             // 
             // msinfoButton
             // 
-            this.msinfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.msinfoButton.Location = new System.Drawing.Point(21, 111);
             this.msinfoButton.Name = "msinfoButton";
             this.msinfoButton.Size = new System.Drawing.Size(75, 23);
             this.msinfoButton.TabIndex = 6;
             this.msinfoButton.Text = "Msinfo";
             this.msinfoButton.UseVisualStyleBackColor = true;
-            this.msinfoButton.Click += new System.EventHandler(this.msinfo_Click);
+            this.msinfoButton.Click += new System.EventHandler(this.Msinfo_Click);
             // 
             // diskmgmtButton
             // 
-            this.diskmgmtButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.diskmgmtButton.Location = new System.Drawing.Point(103, 82);
             this.diskmgmtButton.Name = "diskmgmtButton";
             this.diskmgmtButton.Size = new System.Drawing.Size(75, 23);
             this.diskmgmtButton.TabIndex = 5;
             this.diskmgmtButton.Text = "Diskmgmt";
             this.diskmgmtButton.UseVisualStyleBackColor = true;
-            this.diskmgmtButton.Click += new System.EventHandler(this.diskmgmt_Click);
+            this.diskmgmtButton.Click += new System.EventHandler(this.Diskmgmt_Click);
             // 
             // compmgmtButton
             // 
-            this.compmgmtButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.compmgmtButton.Location = new System.Drawing.Point(21, 82);
             this.compmgmtButton.Name = "compmgmtButton";
             this.compmgmtButton.Size = new System.Drawing.Size(75, 23);
             this.compmgmtButton.TabIndex = 4;
             this.compmgmtButton.Text = "Compmgmt";
             this.compmgmtButton.UseVisualStyleBackColor = true;
-            this.compmgmtButton.Click += new System.EventHandler(this.compmgmt_Click);
+            this.compmgmtButton.Click += new System.EventHandler(this.Compmgmt_Click);
             // 
             // cmdButton
             // 
-            this.cmdButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdButton.Location = new System.Drawing.Point(21, 52);
             this.cmdButton.Name = "cmdButton";
             this.cmdButton.Size = new System.Drawing.Size(75, 23);
             this.cmdButton.TabIndex = 3;
             this.cmdButton.Text = "Command";
             this.cmdButton.UseVisualStyleBackColor = true;
-            this.cmdButton.Click += new System.EventHandler(this.cmdButton_Click);
+            this.cmdButton.Click += new System.EventHandler(this.CmdButton_Click);
             // 
             // wbadButton
             // 
-            this.wbadButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.wbadButton.Location = new System.Drawing.Point(102, 52);
             this.wbadButton.Name = "wbadButton";
             this.wbadButton.Size = new System.Drawing.Size(75, 23);
             this.wbadButton.TabIndex = 2;
-            this.wbadButton.Text = "WbAdmin";
+            this.wbadButton.Text = "Wbadmin";
             this.wbadButton.UseVisualStyleBackColor = true;
-            this.wbadButton.Click += new System.EventHandler(this.wbadButton_Click);
+            this.wbadButton.Click += new System.EventHandler(this.WbadButton_Click);
             // 
             // taskschedButton
             // 
-            this.taskschedButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.taskschedButton.Location = new System.Drawing.Point(102, 23);
             this.taskschedButton.Name = "taskschedButton";
             this.taskschedButton.Size = new System.Drawing.Size(75, 23);
             this.taskschedButton.TabIndex = 1;
             this.taskschedButton.Text = "&Taskschd";
             this.taskschedButton.UseVisualStyleBackColor = true;
-            this.taskschedButton.Click += new System.EventHandler(this.taskschedButton_Click);
+            this.taskschedButton.Click += new System.EventHandler(this.TaskschedButton_Click);
             // 
             // eventButton
             // 
-            this.eventButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.eventButton.Location = new System.Drawing.Point(21, 24);
             this.eventButton.Name = "eventButton";
             this.eventButton.Size = new System.Drawing.Size(75, 23);
             this.eventButton.TabIndex = 0;
             this.eventButton.Text = "&Eventvwr";
             this.eventButton.UseVisualStyleBackColor = true;
-            this.eventButton.Click += new System.EventHandler(this.eventButton_Click);
+            this.eventButton.Click += new System.EventHandler(this.EventButton_Click);
             // 
             // aboutLink
             // 
@@ -227,18 +215,17 @@
             this.aboutLink.TabIndex = 2;
             this.aboutLink.TabStop = true;
             this.aboutLink.Text = "Informacja";
-            this.aboutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.aboutLink_LinkClicked);
+            this.aboutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutLink_LinkClicked);
             // 
             // endButton
             // 
-            this.endButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.endButton.Location = new System.Drawing.Point(21, 16);
             this.endButton.Name = "endButton";
             this.endButton.Size = new System.Drawing.Size(75, 23);
             this.endButton.TabIndex = 0;
             this.endButton.Text = "Koniec";
             this.endButton.UseVisualStyleBackColor = true;
-            this.endButton.Click += new System.EventHandler(this.endButton_Click);
+            this.endButton.Click += new System.EventHandler(this.EndButton_Click);
             // 
             // ContentPanel
             // 
@@ -283,7 +270,7 @@
             this.linkUpdate.TabIndex = 4;
             this.linkUpdate.TabStop = true;
             this.linkUpdate.Text = "Update";
-            this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.updateLink_Clicked);
+            this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLink_Clicked);
             // 
             // frmAdmin
             // 
@@ -294,12 +281,14 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAdmin";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "admin_center";
+            this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);

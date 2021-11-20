@@ -5,12 +5,11 @@ namespace admin_center
 {
     public class Admin : Commands
     {
-        public void CleanShadows()
+        public Process ExecuteCmdCommand(string command)
         {
-            string commmand_str = " /c vssadmin delete shadows /all /quiet & pause";
             try
             {
-                Process.Start("cmd.exe", commmand_str);
+                return Process.Start("cmd.exe", command);
             }
             catch (Exception)
             {
@@ -18,11 +17,11 @@ namespace admin_center
             }
         }
 
-        public void Run(string command)
+        public Process Runcommand(string command)
         {
             try
             {
-                Process.Start(command);
+                return Process.Start(command);
             }
             catch (Exception)
             {

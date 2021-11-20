@@ -5,102 +5,107 @@ using System.Windows.Forms;
 namespace admin_center
 
 {
-    public partial class frmAdmin : Form
+    public partial class FrmAdmin : Form
     {
         /// <summary>
         /// Obiekt klasy admin
         /// </summary>
-        private Admin admin;
+        private readonly Admin admin;
 
-        public frmAdmin()
+        public FrmAdmin()
         {
             InitializeComponent();
+        }
 
+        private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string message = string.Format("Copyright © {0}\nWersja {1}", Application.CompanyName, Application.ProductVersion);
+
+            MessageBox.Show(message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AppButton_Click(object sender, EventArgs e)
+        {
+            admin.Runcommand(admin.APPWIZ);
+        }
+
+        private void CleanButton_Click(object sender, EventArgs e)
+        {
+            admin.Runcommand(admin.APPWIZ);
+        }
+
+        private void CmdButton_Click(object sender, EventArgs e)
+        {
+            admin.Runcommand("cmd.exe");
+        }
+
+        private void Compmgmt_Click(object sender, EventArgs e)
+        {
+            admin.Runcommand("compmgmt.msc");
+        }
+
+        private void Diskmgmt_Click(object sender, EventArgs e)
+        {
+            admin.Runcommand("diskmgmt.msc");
+        }
+
+        private void EndButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void EventButton_Click(object sender, EventArgs e)
+        {
+            admin.Runcommand(admin.EVENTVWR);
+        }
+
+        private void Firewall_Click(object sender, EventArgs e)
+        {
+            admin.Runcommand("firewall.cpl");
+        }
+
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+            // caption information is set wheather user is an admin or not
             if (new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator))
                 Text = "Administrator: " + Application.ProductName;
             else
                 Text = WindowsIdentity.GetCurrent().User.Value + ": " + Application.ProductName;
 
+            // show me application version in the status bar
             label_ver.Text = "ver." + Application.ProductVersion;
         }
 
-        private void cleanButton_Click(object sender, EventArgs e)
+        private void MsconfigButton_Click(object sender, EventArgs e)
         {
-            admin.Run(admin.APPWIZ);
+            admin.Runcommand(admin.MSCONFIG);
         }
 
-        private void shadowsButton_Click(object sender, EventArgs e)
+        private void Msinfo_Click(object sender, EventArgs e)
         {
-            admin.CleanShadows();
+            admin.Runcommand("msinfo32.exe");
         }
 
-        private void eventButton_Click(object sender, EventArgs e)
+        private void ShadowsButton_Click(object sender, EventArgs e)
         {
-            admin.Run(admin.EVENTVWR);
+            string command = " /c vssadmin delete shadows /all /quiet & pause";
+            admin.ExecuteCmdCommand(command);
         }
 
-        private void taskschedButton_Click(object sender, EventArgs e)
+        private void TaskschedButton_Click(object sender, EventArgs e)
         {
-            admin.Run(admin.TASKSCHD);
+            admin.Runcommand(admin.TASKSCHD);
         }
 
-        private void aboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void UpdateLink_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string str_message = string.Format("Copyright © {0}\nWersja {1}", Application.CompanyName, Application.ProductVersion);
-
-            MessageBox.Show(str_message, Application.ProductName, MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-        }
-
-        private void appButton_Click(object sender, EventArgs e)
-        {
-            admin.Run(admin.APPWIZ);
-        }
-
-        private void msconfigButton_Click(object sender, EventArgs e)
-        {
-            admin.Run(admin.MSCONFIG);
-        }
-
-        private void endButton_Click(object sender, EventArgs e)
-        {
+            admin.Runcommand(admin.UPDATE2);
             Application.Exit();
         }
 
-        private void wbadButton_Click(object sender, EventArgs e)
+        private void WbadButton_Click(object sender, EventArgs e)
         {
-            admin.Run(admin.WBADMIN);
-        }
-
-        private void cmdButton_Click(object sender, EventArgs e)
-        {
-            admin.Run("cmd.exe");
-        }
-
-        private void compmgmt_Click(object sender, EventArgs e)
-        {
-            admin.Run("compmgmt.msc");
-        }
-
-        private void diskmgmt_Click(object sender, EventArgs e)
-        {
-            admin.Run("diskmgmt.msc");
-        }
-
-        private void msinfo_Click(object sender, EventArgs e)
-        {
-            admin.Run("msinfo32.exe");
-        }
-
-        private void firewall_Click(object sender, EventArgs e)
-        {
-            admin.Run("firewall.cpl");
-        }
-
-        private void updateLink_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            admin.Run(admin.UPDATE2);
-            Application.Exit();
+            admin.Runcommand(admin.WBADMIN);
         }
     }
 }
