@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Security.Principal;
 using System.Windows.Forms;
-//using Sy
-
 
 namespace admin_center
 
 {
     public partial class frmMain : Form
     {
+        //AdminCenter adminCenter = new AdminCenter();
+
         public frmMain()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace admin_center
             string str_message = string.Format("Copyright © {0}\nWersja {1}",
                 Application.CompanyName,
                 Application.ProductVersion);
-             
+
             MessageBox.Show(str_message, Application.ProductName, MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
