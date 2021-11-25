@@ -18,7 +18,7 @@ namespace admin_center
             /// <summary>
             /// Event when command execution failed and exception was thrown
             /// </summary>
-            admin.ExceptionRaised += OnExcceptionRaised;
+            admin.CommandExecuteException += OnExcceptionRaised;
         }
 
         private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -30,27 +30,27 @@ namespace admin_center
 
         private void AppButton_Click(object sender, EventArgs e)
         {
-            admin.RunCommand(admin.APPWIZ);
+            admin.ExecuteCommand(admin.APPWIZ);
         }
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
-            admin.RunCommand(admin.APPWIZ);
+            admin.ExecuteCommand(admin.APPWIZ);
         }
 
         private void CmdButton_Click(object sender, EventArgs e)
         {
-            admin.RunCommand("cmd.exe");
+            admin.ExecuteCommand("cmd.exe");
         }
 
         private void Compmgmt_Click(object sender, EventArgs e)
         {
-            admin.RunCommand("compmgmt.msc");
+            admin.ExecuteCommand("compmgmt.msc");
         }
 
         private void Diskmgmt_Click(object sender, EventArgs e)
         {
-            admin.RunCommand("diskmgmt.msc");
+            admin.ExecuteCommand("diskmgmt.msc");
         }
 
         private void EndButton_Click(object sender, EventArgs e)
@@ -60,39 +60,36 @@ namespace admin_center
 
         private void EventButton_Click(object sender, EventArgs e)
         {
-            admin.RunCommand(admin.EVENTVWR);
+            admin.ExecuteCommand(admin.EVENTVWR);
         }
 
         private void Firewall_Click(object sender, EventArgs e)
         {
-            admin.RunCommand("firewall.cpl");
+            admin.ExecuteCommand("firewall.cpl");
         }
 
         /// <summary>
-        /// Set a few things on form in run time
+        /// set a few things on form in run time
         /// </summary>
         private void FrmAdmin_Load(object sender, EventArgs e)
         {
             // caption information is set wheather user is an admin or not
-
-            if (new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator))
-                Text = "Administrator: " + Application.ProductName;
-            else
-                Text = WindowsIdentity.GetCurrent().User.Value + ": " + Application.ProductName;
+            Text = new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator)
+                ? $"Administrator: {Application.ProductName}"
+                : $"{WindowsIdentity.GetCurrent().User.Value}: {Application.ProductName}";
 
             // show me application version in the status bar
-
-            label_ver.Text = string.Format("ver.{0}", Application.ProductVersion);
+            label_ver.Text = $"ver.{Application.ProductVersion}";
         }
 
         private void MsconfigButton_Click(object sender, EventArgs e)
         {
-            admin.RunCommand(admin.MSCONFIG);
+            admin.ExecuteCommand(admin.MSCONFIG);
         }
 
         private void Msinfo_Click(object sender, EventArgs e)
         {
-            admin.RunCommand("msinfo32.exe");
+            admin.ExecuteCommand("msinfo32.exe");
         }
 
         private void OnExcceptionRaised(Exception obj)
@@ -103,23 +100,29 @@ namespace admin_center
         private void ShadowsButton_Click(object sender, EventArgs e)
         {
             string command = " /c vssadmin delete shadows /all /quiet & pause";
-            admin.RunCommand(command, true);
+            admin.ExecuteCommand(command, true);
         }
 
         private void TaskschedButton_Click(object sender, EventArgs e)
         {
-            admin.RunCommand(admin.TASKSCHD);
+            admin.ExecuteCommand(admin.TASKSCHD);
         }
 
         private void UpdateLink_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            admin.RunCommand(admin.UPDATE2);
+            admin.ExecuteCommand(admin.UPDATE2);
             Application.Exit();
         }
 
         private void WbadButton_Click(object sender, EventArgs e)
         {
-            admin.RunCommand(admin.WBADMIN);
+            admin.ExecuteCommand(admin.WBADMIN);
+        }
+
+        private void WbCleanButton_Click(object sender, EventArgs e)
+        {
+            string command = string.Format(admin.WBADMIN_DELETE, wbText.Text);
+            admin.ExecuteCommand(command, true);
         }
     }
 }

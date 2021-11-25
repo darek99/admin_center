@@ -5,9 +5,9 @@ namespace admin_center
 {
     public class Admin : Commands
     {
-        public Action<Exception> ExceptionRaised;
+        public Action<Exception> CommandExecuteException;
 
-        public void RunCommand(string command, bool cmd = false)
+        public void ExecuteCommand(string command, bool cmd = false)
         {
             try
             {
@@ -15,7 +15,7 @@ namespace admin_center
             }
             catch (Exception e)
             {
-                ExceptionRaised(e);
+                CommandExecuteException(e);
             }
         }
     }

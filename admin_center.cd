@@ -3,7 +3,7 @@
   <Class Name="admin_center.Admin">
     <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAACAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>admin.cs</FileName>
     </TypeIdentifier>
   </Class>
