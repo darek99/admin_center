@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdmin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkUpdate = new System.Windows.Forms.LinkLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.msconfigButton = new System.Windows.Forms.Button();
+            this.aboutLink = new System.Windows.Forms.LinkLabel();
             this.appButton = new System.Windows.Forms.Button();
             this.shadowsButton = new System.Windows.Forms.Button();
             this.cleanButton = new System.Windows.Forms.Button();
@@ -43,22 +46,20 @@
             this.wbadButton = new System.Windows.Forms.Button();
             this.taskschedButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
-            this.aboutLink = new System.Windows.Forms.LinkLabel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.label_ver = new System.Windows.Forms.ToolStripStatusLabel();
-            this.linkUpdate = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.wbText = new System.Windows.Forms.TextBox();
+            this.numUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.numUpDown);
             this.groupBox1.Controls.Add(this.linkUpdate);
-            this.groupBox1.Controls.Add(this.wbText);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.msconfigButton);
             this.groupBox1.Controls.Add(this.aboutLink);
@@ -69,10 +70,33 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(267, 195);
+            this.groupBox1.Size = new System.Drawing.Size(267, 194);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cleaning";
+            // 
+            // linkUpdate
+            // 
+            this.linkUpdate.AutoSize = true;
+            this.linkUpdate.Location = new System.Drawing.Point(133, 161);
+            this.linkUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkUpdate.Name = "linkUpdate";
+            this.linkUpdate.Size = new System.Drawing.Size(54, 17);
+            this.linkUpdate.TabIndex = 2;
+            this.linkUpdate.TabStop = true;
+            this.linkUpdate.Text = "Update";
+            this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLink_Clicked);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(28, 100);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "WbClean";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.WbCleanButton_Click);
             // 
             // msconfigButton
             // 
@@ -84,6 +108,18 @@
             this.msconfigButton.Text = "Msconfig";
             this.msconfigButton.UseVisualStyleBackColor = true;
             this.msconfigButton.Click += new System.EventHandler(this.MsconfigButton_Click);
+            // 
+            // aboutLink
+            // 
+            this.aboutLink.AutoSize = true;
+            this.aboutLink.Location = new System.Drawing.Point(191, 161);
+            this.aboutLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.aboutLink.Name = "aboutLink";
+            this.aboutLink.Size = new System.Drawing.Size(45, 17);
+            this.aboutLink.TabIndex = 1;
+            this.aboutLink.TabStop = true;
+            this.aboutLink.Text = "About";
+            this.aboutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutLink_LinkClicked);
             // 
             // appButton
             // 
@@ -132,7 +168,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(267, 195);
+            this.groupBox2.Size = new System.Drawing.Size(267, 194);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Info";
@@ -225,18 +261,6 @@
             this.eventButton.UseVisualStyleBackColor = true;
             this.eventButton.Click += new System.EventHandler(this.EventButton_Click);
             // 
-            // aboutLink
-            // 
-            this.aboutLink.AutoSize = true;
-            this.aboutLink.Location = new System.Drawing.Point(191, 161);
-            this.aboutLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.aboutLink.Name = "aboutLink";
-            this.aboutLink.Size = new System.Drawing.Size(45, 17);
-            this.aboutLink.TabIndex = 1;
-            this.aboutLink.TabStop = true;
-            this.aboutLink.Text = "About";
-            this.aboutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AboutLink_LinkClicked);
-            // 
             // ContentPanel
             // 
             this.ContentPanel.Size = new System.Drawing.Size(150, 175);
@@ -261,37 +285,19 @@
             this.label_ver.Spring = true;
             this.label_ver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // linkUpdate
+            // numUpDown
             // 
-            this.linkUpdate.AutoSize = true;
-            this.linkUpdate.Location = new System.Drawing.Point(133, 161);
-            this.linkUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkUpdate.Name = "linkUpdate";
-            this.linkUpdate.Size = new System.Drawing.Size(54, 17);
-            this.linkUpdate.TabIndex = 2;
-            this.linkUpdate.TabStop = true;
-            this.linkUpdate.Text = "Update";
-            this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLink_Clicked);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(28, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "WB clean";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.WbCleanButton_Click);
-            // 
-            // wbText
-            // 
-            this.wbText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wbText.Location = new System.Drawing.Point(136, 101);
-            this.wbText.Name = "wbText";
-            this.wbText.Size = new System.Drawing.Size(100, 22);
-            this.wbText.TabIndex = 5;
-            this.wbText.Text = "3";
-            this.wbText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numUpDown.Location = new System.Drawing.Point(136, 104);
+            this.numUpDown.Name = "numUpDown";
+            this.numUpDown.Size = new System.Drawing.Size(100, 22);
+            this.numUpDown.TabIndex = 5;
+            this.numUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numUpDown.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
             // FrmAdmin
             // 
@@ -315,6 +321,7 @@
             this.groupBox2.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,8 +348,8 @@
         private System.Windows.Forms.Button fwButton;
         private System.Windows.Forms.Button msinfoButton;
         private System.Windows.Forms.LinkLabel linkUpdate;
-        private System.Windows.Forms.TextBox wbText;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numUpDown;
     }
 }
 
