@@ -7,7 +7,7 @@ namespace admin_center
     public partial class FrmAdmin : Form
     {
         /// <summary>
-        /// Obiekt klasy admin
+        /// handle class Admin
         /// </summary>
         private readonly Admin admin = new Admin();
 
@@ -23,19 +23,19 @@ namespace admin_center
 
         private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string message = string.Format("Copyright © {0}\nWersja {1}", Application.CompanyName, Application.ProductVersion);
+            string message = $"Copyright © {Application.CompanyName}\nWersja {Application.ProductVersion}";
 
             _ = MessageBox.Show(message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AppButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.APPWIZ);
+            admin.ExecuteCommand(admin.appwiz);
         }
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.APPWIZ);
+            admin.ExecuteCommand(admin.appwiz);
         }
 
         private void CmdButton_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace admin_center
 
         private void EventButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.EVENTVWR);
+            admin.ExecuteCommand(admin.eventvwr);
         }
 
         private void Firewall_Click(object sender, EventArgs e)
@@ -68,9 +68,6 @@ namespace admin_center
             admin.ExecuteCommand("firewall.cpl");
         }
 
-        /// <summary>
-        /// set a few things on form in run time
-        /// </summary>
         private void FrmAdmin_Load(object sender, EventArgs e)
         {
             // caption information is set wheather user is an admin or not
@@ -84,7 +81,7 @@ namespace admin_center
 
         private void MsconfigButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.MSCONFIG);
+            admin.ExecuteCommand(admin.msconfig);
         }
 
         private void Msinfo_Click(object sender, EventArgs e)
@@ -105,23 +102,32 @@ namespace admin_center
 
         private void TaskschedButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.TASKSCHD);
+            admin.ExecuteCommand(admin.taskschd);
         }
 
         private void UpdateLink_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            admin.ExecuteCommand(admin.UPDATE2);
+            admin.ExecuteCommand(admin.update2);
             Application.Exit();
         }
 
         private void WbadButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.WBADMIN);
+            admin.ExecuteCommand(admin.wbadmin);
         }
 
         private void WbCleanButton_Click(object sender, EventArgs e)
         {
-            string command = string.Format(admin.WBADMIN_DELETE, wbText.Text);
+            decimal result;
+            Decimal.TryParse(wbText.Text, out result);
+
+            if (result < 0)
+            {
+                _ = MessageBox.Show("Must be equal or grater then 0");
+                return;
+            }
+
+            string command = string.Format(admin.wbadmin_delete, wbText.Text);
             admin.ExecuteCommand(command, true);
         }
     }
