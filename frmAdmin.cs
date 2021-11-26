@@ -118,16 +118,7 @@ namespace admin_center
 
         private void WbCleanButton_Click(object sender, EventArgs e)
         {
-            decimal result;
-            Decimal.TryParse(wbText.Text, out result);
-
-            if (result < 0)
-            {
-                _ = MessageBox.Show("Must be equal or grater then 0");
-                return;
-            }
-
-            string command = string.Format(admin.wbadmin_delete, wbText.Text);
+            string command = $" /c wbadmin delete backup -keepversions:{numUpDown.Value} & pause";
             admin.ExecuteCommand(command, true);
         }
     }

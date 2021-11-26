@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdmin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.linkUpdate = new System.Windows.Forms.LinkLabel();
-            this.wbText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.msconfigButton = new System.Windows.Forms.Button();
             this.aboutLink = new System.Windows.Forms.LinkLabel();
@@ -50,24 +49,28 @@
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.label_ver = new System.Windows.Forms.ToolStripStatusLabel();
+            this.numUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.numUpDown);
             this.groupBox1.Controls.Add(this.linkUpdate);
-            this.groupBox1.Controls.Add(this.wbText);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.msconfigButton);
             this.groupBox1.Controls.Add(this.aboutLink);
             this.groupBox1.Controls.Add(this.appButton);
             this.groupBox1.Controls.Add(this.shadowsButton);
             this.groupBox1.Controls.Add(this.cleanButton);
-            this.groupBox1.Location = new System.Drawing.Point(230, 12);
+            this.groupBox1.Location = new System.Drawing.Point(307, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 158);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(267, 194);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cleaning";
@@ -75,41 +78,32 @@
             // linkUpdate
             // 
             this.linkUpdate.AutoSize = true;
-            this.linkUpdate.Location = new System.Drawing.Point(100, 131);
+            this.linkUpdate.Location = new System.Drawing.Point(133, 161);
+            this.linkUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkUpdate.Name = "linkUpdate";
-            this.linkUpdate.Size = new System.Drawing.Size(42, 13);
+            this.linkUpdate.Size = new System.Drawing.Size(54, 17);
             this.linkUpdate.TabIndex = 2;
             this.linkUpdate.TabStop = true;
             this.linkUpdate.Text = "Update";
             this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLink_Clicked);
             // 
-            // wbText
-            // 
-            this.wbText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wbText.Location = new System.Drawing.Point(122, 84);
-            this.wbText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.wbText.Name = "wbText";
-            this.wbText.Size = new System.Drawing.Size(32, 20);
-            this.wbText.TabIndex = 5;
-            this.wbText.Text = "3";
-            this.wbText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(21, 81);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(28, 100);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
-            this.button1.Text = "WB clean";
+            this.button1.Text = "WbClean";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.WbCleanButton_Click);
             // 
             // msconfigButton
             // 
-            this.msconfigButton.Location = new System.Drawing.Point(102, 52);
+            this.msconfigButton.Location = new System.Drawing.Point(136, 64);
+            this.msconfigButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.msconfigButton.Name = "msconfigButton";
-            this.msconfigButton.Size = new System.Drawing.Size(75, 23);
+            this.msconfigButton.Size = new System.Drawing.Size(100, 28);
             this.msconfigButton.TabIndex = 3;
             this.msconfigButton.Text = "Msconfig";
             this.msconfigButton.UseVisualStyleBackColor = true;
@@ -118,9 +112,10 @@
             // aboutLink
             // 
             this.aboutLink.AutoSize = true;
-            this.aboutLink.Location = new System.Drawing.Point(143, 131);
+            this.aboutLink.Location = new System.Drawing.Point(191, 161);
+            this.aboutLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.aboutLink.Name = "aboutLink";
-            this.aboutLink.Size = new System.Drawing.Size(35, 13);
+            this.aboutLink.Size = new System.Drawing.Size(45, 17);
             this.aboutLink.TabIndex = 1;
             this.aboutLink.TabStop = true;
             this.aboutLink.Text = "About";
@@ -128,9 +123,10 @@
             // 
             // appButton
             // 
-            this.appButton.Location = new System.Drawing.Point(21, 52);
+            this.appButton.Location = new System.Drawing.Point(28, 64);
+            this.appButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.appButton.Name = "appButton";
-            this.appButton.Size = new System.Drawing.Size(75, 23);
+            this.appButton.Size = new System.Drawing.Size(100, 28);
             this.appButton.TabIndex = 2;
             this.appButton.Text = "Programs";
             this.appButton.UseVisualStyleBackColor = true;
@@ -138,9 +134,10 @@
             // 
             // shadowsButton
             // 
-            this.shadowsButton.Location = new System.Drawing.Point(102, 23);
+            this.shadowsButton.Location = new System.Drawing.Point(136, 28);
+            this.shadowsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.shadowsButton.Name = "shadowsButton";
-            this.shadowsButton.Size = new System.Drawing.Size(75, 23);
+            this.shadowsButton.Size = new System.Drawing.Size(100, 28);
             this.shadowsButton.TabIndex = 1;
             this.shadowsButton.Text = "&Shadows";
             this.shadowsButton.UseVisualStyleBackColor = true;
@@ -148,9 +145,10 @@
             // 
             // cleanButton
             // 
-            this.cleanButton.Location = new System.Drawing.Point(21, 23);
+            this.cleanButton.Location = new System.Drawing.Point(28, 28);
+            this.cleanButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cleanButton.Name = "cleanButton";
-            this.cleanButton.Size = new System.Drawing.Size(75, 23);
+            this.cleanButton.Size = new System.Drawing.Size(100, 28);
             this.cleanButton.TabIndex = 0;
             this.cleanButton.Text = "&Cleanmgr";
             this.cleanButton.UseVisualStyleBackColor = true;
@@ -166,18 +164,21 @@
             this.groupBox2.Controls.Add(this.wbadButton);
             this.groupBox2.Controls.Add(this.taskschedButton);
             this.groupBox2.Controls.Add(this.eventButton);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(16, 15);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 158);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(267, 194);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Info";
             // 
             // fwButton
             // 
-            this.fwButton.Location = new System.Drawing.Point(103, 111);
+            this.fwButton.Location = new System.Drawing.Point(137, 137);
+            this.fwButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fwButton.Name = "fwButton";
-            this.fwButton.Size = new System.Drawing.Size(75, 23);
+            this.fwButton.Size = new System.Drawing.Size(100, 28);
             this.fwButton.TabIndex = 7;
             this.fwButton.Text = "Firewall";
             this.fwButton.UseVisualStyleBackColor = true;
@@ -185,9 +186,10 @@
             // 
             // msinfoButton
             // 
-            this.msinfoButton.Location = new System.Drawing.Point(21, 111);
+            this.msinfoButton.Location = new System.Drawing.Point(28, 137);
+            this.msinfoButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.msinfoButton.Name = "msinfoButton";
-            this.msinfoButton.Size = new System.Drawing.Size(75, 23);
+            this.msinfoButton.Size = new System.Drawing.Size(100, 28);
             this.msinfoButton.TabIndex = 6;
             this.msinfoButton.Text = "Msinfo";
             this.msinfoButton.UseVisualStyleBackColor = true;
@@ -195,9 +197,10 @@
             // 
             // diskmgmtButton
             // 
-            this.diskmgmtButton.Location = new System.Drawing.Point(103, 82);
+            this.diskmgmtButton.Location = new System.Drawing.Point(137, 101);
+            this.diskmgmtButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.diskmgmtButton.Name = "diskmgmtButton";
-            this.diskmgmtButton.Size = new System.Drawing.Size(75, 23);
+            this.diskmgmtButton.Size = new System.Drawing.Size(100, 28);
             this.diskmgmtButton.TabIndex = 5;
             this.diskmgmtButton.Text = "Diskmgmt";
             this.diskmgmtButton.UseVisualStyleBackColor = true;
@@ -205,9 +208,10 @@
             // 
             // compmgmtButton
             // 
-            this.compmgmtButton.Location = new System.Drawing.Point(21, 82);
+            this.compmgmtButton.Location = new System.Drawing.Point(28, 101);
+            this.compmgmtButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.compmgmtButton.Name = "compmgmtButton";
-            this.compmgmtButton.Size = new System.Drawing.Size(75, 23);
+            this.compmgmtButton.Size = new System.Drawing.Size(100, 28);
             this.compmgmtButton.TabIndex = 4;
             this.compmgmtButton.Text = "Compmgmt";
             this.compmgmtButton.UseVisualStyleBackColor = true;
@@ -215,9 +219,10 @@
             // 
             // cmdButton
             // 
-            this.cmdButton.Location = new System.Drawing.Point(21, 52);
+            this.cmdButton.Location = new System.Drawing.Point(28, 64);
+            this.cmdButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdButton.Name = "cmdButton";
-            this.cmdButton.Size = new System.Drawing.Size(75, 23);
+            this.cmdButton.Size = new System.Drawing.Size(100, 28);
             this.cmdButton.TabIndex = 2;
             this.cmdButton.Text = "Command";
             this.cmdButton.UseVisualStyleBackColor = true;
@@ -225,9 +230,10 @@
             // 
             // wbadButton
             // 
-            this.wbadButton.Location = new System.Drawing.Point(102, 52);
+            this.wbadButton.Location = new System.Drawing.Point(136, 64);
+            this.wbadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wbadButton.Name = "wbadButton";
-            this.wbadButton.Size = new System.Drawing.Size(75, 23);
+            this.wbadButton.Size = new System.Drawing.Size(100, 28);
             this.wbadButton.TabIndex = 3;
             this.wbadButton.Text = "Wbadmin";
             this.wbadButton.UseVisualStyleBackColor = true;
@@ -235,9 +241,10 @@
             // 
             // taskschedButton
             // 
-            this.taskschedButton.Location = new System.Drawing.Point(102, 23);
+            this.taskschedButton.Location = new System.Drawing.Point(136, 28);
+            this.taskschedButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.taskschedButton.Name = "taskschedButton";
-            this.taskschedButton.Size = new System.Drawing.Size(75, 23);
+            this.taskschedButton.Size = new System.Drawing.Size(100, 28);
             this.taskschedButton.TabIndex = 1;
             this.taskschedButton.Text = "&Taskschd";
             this.taskschedButton.UseVisualStyleBackColor = true;
@@ -245,9 +252,10 @@
             // 
             // eventButton
             // 
-            this.eventButton.Location = new System.Drawing.Point(21, 24);
+            this.eventButton.Location = new System.Drawing.Point(28, 30);
+            this.eventButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.eventButton.Name = "eventButton";
-            this.eventButton.Size = new System.Drawing.Size(75, 23);
+            this.eventButton.Size = new System.Drawing.Size(100, 28);
             this.eventButton.TabIndex = 0;
             this.eventButton.Text = "&Eventvwr";
             this.eventButton.UseVisualStyleBackColor = true;
@@ -262,9 +270,10 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.label_ver});
-            this.statusStrip.Location = new System.Drawing.Point(0, 174);
+            this.statusStrip.Location = new System.Drawing.Point(0, 220);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(442, 24);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip.Size = new System.Drawing.Size(589, 24);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
             // 
@@ -272,20 +281,35 @@
             // 
             this.label_ver.AutoSize = false;
             this.label_ver.Name = "label_ver";
-            this.label_ver.Size = new System.Drawing.Size(427, 19);
+            this.label_ver.Size = new System.Drawing.Size(569, 18);
             this.label_ver.Spring = true;
             this.label_ver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // numUpDown
+            // 
+            this.numUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numUpDown.Location = new System.Drawing.Point(136, 104);
+            this.numUpDown.Name = "numUpDown";
+            this.numUpDown.Size = new System.Drawing.Size(100, 22);
+            this.numUpDown.TabIndex = 5;
+            this.numUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numUpDown.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
             // FrmAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 198);
+            this.ClientSize = new System.Drawing.Size(589, 244);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmAdmin";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -297,6 +321,7 @@
             this.groupBox2.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,8 +348,8 @@
         private System.Windows.Forms.Button fwButton;
         private System.Windows.Forms.Button msinfoButton;
         private System.Windows.Forms.LinkLabel linkUpdate;
-        private System.Windows.Forms.TextBox wbText;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numUpDown;
     }
 }
 
