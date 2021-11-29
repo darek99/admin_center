@@ -35,7 +35,7 @@ namespace admin_center
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.appwiz);
+            admin.ExecuteCommand(admin.cleanmgr);
         }
 
         private void CmdButton_Click(object sender, EventArgs e)
