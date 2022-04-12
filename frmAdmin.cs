@@ -26,7 +26,6 @@ namespace admin_center
         private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string message = $"Copyright © {Application.CompanyName}\nWersja {Application.ProductVersion}";
-
             _ = MessageBox.Show(message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -108,10 +107,6 @@ namespace admin_center
         private void TaskschedButton_Click(object sender, EventArgs e)
         {
             Admin.taskschd.ExecuteCommand();
-        }
-
-        private void UpdateLink_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
         }
 
         private void WbadButton_Click(object sender, EventArgs e)

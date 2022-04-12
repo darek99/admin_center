@@ -85,7 +85,6 @@
             this.linkUpdate.TabIndex = 2;
             this.linkUpdate.TabStop = true;
             this.linkUpdate.Text = "Update";
-            this.linkUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLink_Clicked);
             // 
             // button1
             // 
