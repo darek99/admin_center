@@ -25,8 +25,7 @@ namespace admin_center
 
         private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string message = $"Copyright © {Application.CompanyName}\nWersja {Application.ProductVersion}";
-            _ = MessageBox.Show(message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
         }
 
         private void AppButton_Click(object sender, EventArgs e)
@@ -119,6 +118,13 @@ namespace admin_center
             string command = $" /c wbadmin delete backup -keepversions:{numUpDown.Value} & pause";
             command.ExecuteCommand(true);
             //admin.ExecuteCommand(command, true);
+        }
+
+        private void FrmAdmin_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string message = $"Copyright © {Application.CompanyName}\nWersja {Application.ProductVersion}";
+            _ = MessageBox.Show(message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            e.Cancel = true;
         }
     }
 }
