@@ -6,11 +6,6 @@ namespace admin_center
 {
     public partial class FrmAdmin : Form
     {
-        /// <summary>
-        /// handle class Admin
-        /// </summary>
-        //private readonly Admin admin = new Admin();
-
         public FrmAdmin()
         {
             InitializeComponent();
@@ -18,31 +13,22 @@ namespace admin_center
             /// <summary>
             /// Event when command execution failed and exception was thrown
             /// </summary>
-
             Extension.CommandExecuteException += OnExcceptionRaised;
-            //admin.CommandExecuteException += OnExcceptionRaised;
-        }
-
-        private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-           
         }
 
         private void AppButton_Click(object sender, EventArgs e)
         {
-            //admin.ExecuteCommand(admin.appwiz);
             Admin.appwiz.ExecuteCommand();
         }
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
-            //admin.ExecuteCommand(admin.cleanmgr);
             Admin.cleanmgr.ExecuteCommand();
         }
 
         private void CmdButton_Click(object sender, EventArgs e)
         {
-            Admin.cmd.ExecuteCommand();
+            Admin.cmd_run.ExecuteCommand();
         }
 
         private void Compmgmt_Click(object sender, EventArgs e)
@@ -100,7 +86,6 @@ namespace admin_center
         {
             string command = " /c vssadmin delete shadows /all /quiet & pause";
             command.ExecuteCommand(true);
-            //admin.ExecuteCommand(command, true);
         }
 
         private void TaskschedButton_Click(object sender, EventArgs e)
@@ -117,7 +102,6 @@ namespace admin_center
         {
             string command = $" /c wbadmin delete backup -keepversions:{numUpDown.Value} & pause";
             command.ExecuteCommand(true);
-            //admin.ExecuteCommand(command, true);
         }
 
         private void FrmAdmin_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)

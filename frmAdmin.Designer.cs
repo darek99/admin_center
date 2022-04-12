@@ -250,9 +250,9 @@
             // label_ver
             // 
             this.label_ver.AutoSize = false;
-            this.label_ver.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.label_ver.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken;
             this.label_ver.Name = "label_ver";
-            this.label_ver.Size = new System.Drawing.Size(427, 19);
+            this.label_ver.Size = new System.Drawing.Size(396, 19);
             this.label_ver.Spring = true;
             this.label_ver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
