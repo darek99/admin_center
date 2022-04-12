@@ -9,7 +9,7 @@ namespace admin_center
         /// <summary>
         /// handle class Admin
         /// </summary>
-        private readonly Admin admin = new Admin();
+        //private readonly Admin admin = new Admin();
 
         public FrmAdmin()
         {
@@ -18,7 +18,9 @@ namespace admin_center
             /// <summary>
             /// Event when command execution failed and exception was thrown
             /// </summary>
-            admin.CommandExecuteException += OnExcceptionRaised;
+
+            Extension.CommandExecuteException += OnExcceptionRaised;
+            //admin.CommandExecuteException += OnExcceptionRaised;
         }
 
         private void AboutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -30,27 +32,29 @@ namespace admin_center
 
         private void AppButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.appwiz);
+            //admin.ExecuteCommand(admin.appwiz);
+            Admin.appwiz.ExecuteCommand();
         }
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.cleanmgr);
+            //admin.ExecuteCommand(admin.cleanmgr);
+            Admin.cleanmgr.ExecuteCommand();
         }
 
         private void CmdButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand("cmd.exe");
+            Admin.cmd.ExecuteCommand();
         }
 
         private void Compmgmt_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand("compmgmt.msc");
+            Admin.compmgmt.ExecuteCommand();
         }
 
         private void Diskmgmt_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand("diskmgmt.msc");
+            Admin.diskmgmt.ExecuteCommand();
         }
 
         private void EndButton_Click(object sender, EventArgs e)
@@ -60,12 +64,12 @@ namespace admin_center
 
         private void EventButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.eventvwr);
+            Admin.eventvwr.ExecuteCommand();
         }
 
         private void Firewall_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand("firewall.cpl");
+            Admin.firewall.ExecuteCommand();
         }
 
         private void FrmAdmin_Load(object sender, EventArgs e)
@@ -81,12 +85,12 @@ namespace admin_center
 
         private void MsconfigButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.msconfig);
+            Admin.msconfig.ExecuteCommand();
         }
 
         private void Msinfo_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand("msinfo32.exe");
+            Admin.msinfo32.ExecuteCommand();
         }
 
         private void OnExcceptionRaised(Exception obj)
@@ -97,29 +101,29 @@ namespace admin_center
         private void ShadowsButton_Click(object sender, EventArgs e)
         {
             string command = " /c vssadmin delete shadows /all /quiet & pause";
-            admin.ExecuteCommand(command, true);
+            command.ExecuteCommand(true);
+            //admin.ExecuteCommand(command, true);
         }
 
         private void TaskschedButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.taskschd);
+            Admin.taskschd.ExecuteCommand();
         }
 
         private void UpdateLink_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            admin.ExecuteCommand(admin.update2);
-            Application.Exit();
         }
 
         private void WbadButton_Click(object sender, EventArgs e)
         {
-            admin.ExecuteCommand(admin.wbadmin);
+            Admin.wbadmin.ExecuteCommand();
         }
 
         private void WbCleanButton_Click(object sender, EventArgs e)
         {
             string command = $" /c wbadmin delete backup -keepversions:{numUpDown.Value} & pause";
-            admin.ExecuteCommand(command, true);
+            command.ExecuteCommand(true);
+            //admin.ExecuteCommand(command, true);
         }
     }
 }
