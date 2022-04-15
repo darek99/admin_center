@@ -17,6 +17,9 @@ namespace admin_center
         public static readonly string taskschd = "taskschd.msc";
         public static readonly string wbadmin = "wbadmin.msc";
         public static readonly string wbadmin_delete = "/c wbadmin delete backup -keepversions:{0} & pause";
+
+        public static readonly string wmic_list1 =
+            " /c wmic useraccount get Disabled, Lockout, Name, PasswordChangeable, PasswordExpires, PasswordRequired & pause";
     }
 
     public static class Extension

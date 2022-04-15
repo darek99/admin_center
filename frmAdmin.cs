@@ -110,5 +110,10 @@ namespace admin_center
             _ = MessageBox.Show(message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             e.Cancel = true;
         }
+
+        private void linkWmicList_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Admin.wmic_list1.ExecuteCommand(true);
+        }
     }
 }
