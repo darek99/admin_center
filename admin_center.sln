@@ -31,6 +31,7 @@ Global
 		UpdateAssemblyVersion.Debug|Any CPU = True
 		UpdateAssemblyFileVersion.Debug|Any CPU = True
 		UpdateAssemblyInfoVersion.Debug|Any CPU = False
+		ShouldCreateLogs.Debug|Any CPU = True
 		AssemblyVersionSettings.Debug|Any CPU = None.None.IncrementWithResetOnIncrease.None
 		AssemblyFileVersionSettings.Debug|Any CPU = None.None.IncrementWithResetOnIncrease.None
 		UpdatePackageVersion.Debug|Any CPU = False
