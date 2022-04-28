@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace admin_center
 {
-    public static class Admin
+    public static class Commands
     {
         public static readonly string appwiz = "appwiz.cpl";
         public static readonly string cleanmgr = "cleanmgr.exe";
@@ -16,17 +16,20 @@ namespace admin_center
         public static readonly string msinfo32 = "msinfo32.exe";
         public static readonly string taskschd = "taskschd.msc";
         public static readonly string wbadmin = "wbadmin.msc";
-        public static readonly string wbadmin_delete = "/c wbadmin delete backup -keepversions:{0} & pause";
 
-        public static readonly string wmic_list1 =
-            " /c wmic useraccount get Disabled, Lockout, Name, PasswordChangeable, PasswordExpires, PasswordRequired & pause";
+        public static readonly string wbadmin_delete =
+            "/c wbadmin delete backup -keepversions:{0} && pause";
+
+        public static readonly string wmic_list =
+            " /c wmic useraccount get Disabled, Lockout, Name, PasswordChangeable, PasswordExpires, " +
+            "PasswordRequired & pause";
     }
 
-    public static class Extension
+    public static class CommandExecute
     {
-        public static Action<Exception> CommandExecuteException;
+        public static Action<Exception> ExecuteException;
 
-        public static void ExecuteCommand(this string command, bool cmd = false)
+        public static void Execute(this string command, bool cmd = false)
         {
             try
             {
@@ -34,7 +37,7 @@ namespace admin_center
             }
             catch (Exception e)
             {
-                CommandExecuteException?.Invoke(e);
+                ExecuteException?.Invoke(e);
             }
         }
     }

@@ -13,32 +13,58 @@ namespace admin_center
             /// <summary>
             /// Event when command execution failed and exception was thrown
             /// </summary>
-            Extension.CommandExecuteException += OnExcceptionRaised;
+            CommandExecute.ExecuteException += OnExecuteException;
+        }
+
+        private void OnExecuteException(Exception obj)
+        {
+            _ = MessageBox.Show(obj.Message);
+        }
+
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+            // caption information is set wheather user is admin or not
+
+            Text = new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator)
+                ? $"Administrator: {Application.ProductName}"
+                : $"{WindowsIdentity.GetCurrent().User.Value}: {Application.ProductName}";
+
+            label_ver.Text = $"ver.{Application.ProductVersion}";
+        }
+
+        private void FrmAdmin_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string message = $"Copyright © {Application.CompanyName}\nWersja {Application.ProductVersion}";
+
+            _ = MessageBox
+                .Show(message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            e.Cancel = true;
         }
 
         private void AppButton_Click(object sender, EventArgs e)
         {
-            Admin.appwiz.ExecuteCommand();
+            Commands.appwiz.Execute();
         }
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
-            Admin.cleanmgr.ExecuteCommand();
+            Commands.cleanmgr.Execute();
         }
 
         private void CmdButton_Click(object sender, EventArgs e)
         {
-            Admin.cmd_run.ExecuteCommand();
+            Commands.cmd_run.Execute();
         }
 
         private void Compmgmt_Click(object sender, EventArgs e)
         {
-            Admin.compmgmt.ExecuteCommand();
+            Commands.compmgmt.Execute();
         }
 
         private void Diskmgmt_Click(object sender, EventArgs e)
         {
-            Admin.diskmgmt.ExecuteCommand();
+            Commands.diskmgmt.Execute();
         }
 
         private void EndButton_Click(object sender, EventArgs e)
@@ -48,72 +74,49 @@ namespace admin_center
 
         private void EventButton_Click(object sender, EventArgs e)
         {
-            Admin.eventvwr.ExecuteCommand();
+            Commands.eventvwr.Execute();
         }
 
         private void Firewall_Click(object sender, EventArgs e)
         {
-            Admin.firewall.ExecuteCommand();
-        }
-
-        private void FrmAdmin_Load(object sender, EventArgs e)
-        {
-            // caption information is set wheather user is an admin or not
-            Text = new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator)
-                ? $"Administrator: {Application.ProductName}"
-                : $"{WindowsIdentity.GetCurrent().User.Value}: {Application.ProductName}";
-
-            // show me application version in the status bar
-            label_ver.Text = $"ver.{Application.ProductVersion}";
+            Commands.firewall.Execute();
         }
 
         private void MsconfigButton_Click(object sender, EventArgs e)
         {
-            Admin.msconfig.ExecuteCommand();
+            Commands.msconfig.Execute();
         }
 
         private void Msinfo_Click(object sender, EventArgs e)
         {
-            Admin.msinfo32.ExecuteCommand();
-        }
-
-        private void OnExcceptionRaised(Exception obj)
-        {
-            _ = MessageBox.Show(obj.Message);
+            Commands.msinfo32.Execute();
         }
 
         private void ShadowsButton_Click(object sender, EventArgs e)
         {
-            string command = " /c vssadmin delete shadows /all /quiet & pause";
-            command.ExecuteCommand(true);
+            string command = " /c vssadmin delete shadows /all /quiet && pause";
+            command.Execute(true);
         }
 
         private void TaskschedButton_Click(object sender, EventArgs e)
         {
-            Admin.taskschd.ExecuteCommand();
+            Commands.taskschd.Execute();
         }
 
         private void WbadButton_Click(object sender, EventArgs e)
         {
-            Admin.wbadmin.ExecuteCommand();
+            Commands.wbadmin.Execute();
         }
 
         private void WbCleanButton_Click(object sender, EventArgs e)
         {
-            string command = $" /c wbadmin delete backup -keepversions:{numUpDown.Value} & pause";
-            command.ExecuteCommand(true);
-        }
-
-        private void FrmAdmin_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            string message = $"Copyright © {Application.CompanyName}\nWersja {Application.ProductVersion}";
-            _ = MessageBox.Show(message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            e.Cancel = true;
+            string command = string.Format(Commands.wbadmin_delete, numUpDown.Value);
+            command.Execute(true);
         }
 
         private void linkWmicList_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Admin.wmic_list1.ExecuteCommand(true);
+            Commands.wmic_list.Execute(true);
         }
     }
 }
